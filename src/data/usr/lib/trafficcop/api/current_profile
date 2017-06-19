@@ -4,21 +4,21 @@ source $(dirname $0)/_common
 
 stop_if_not_get
 
-delay=$(tc qdisc ls dev br-lan | grep 7866 | cut -d " " -f 9)
+delay=$(tc qdisc ls dev eth0 | grep qdisc | cut -d " " -f 10)
 
-echo "Content-Type: text/plain"
-echo
+#echo "Content-Type: text/plain"
+#echo
 
 if [ "$delay" = "100.0ms" ]; then
   echo "3g"
-elif [ "$delay" = "440.0ms" ]; then
-  echo "edge"
-elif [ "$delay" = "600.0ms" ]; then
-  echo "very_bad"
-elif [ "$delay" = "5.0ms" ]; then
+elif [ "$delay" = "400.0ms" ]; then
   echo "dsl"
-elif [ "$delay" = "200.0ms" ]; then
+elif [ "$delay" = "800.0ms" ]; then
+  echo "edge"
+elif [ "$delay" = "1.5s" ]; then
   echo "bad"
+elif [ "$delay" = "3.0s" ]; then
+  echo "very_bad"
 else
   echo "none"
 fi
