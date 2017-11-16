@@ -29,6 +29,7 @@ To install this, download the ipk package from releases into your /tmp and then 
 
     # opkg update
     # opkg install trafficcop-*.ipk
+    # modprobe sch_netem
 
 This should install and start trafficcop on 8080 with uhttpd on the ip address for the interface `br-lan`. If you're unsure what IP this is, you can run the following to find out:
 
