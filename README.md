@@ -36,3 +36,7 @@ This should install and start trafficcop on 8080 with uhttpd on the ip address f
     # ifconfig br-lan | grep 'inet addr' | cut -d ":" -f 2 | cut -d " " -f 1
 
 This means you can access traffic cop at `http://<router ip>:8080`. 
+
+
+Installation location:
+    # /usr/lib/trafficcop
